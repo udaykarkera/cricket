@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use kartik\grid\GridView;
+use backend\models\TournamentFormatsSearch;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\TournamentFormatsSearch */
@@ -39,9 +40,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'updated_at',
             'status',
             // 'priority',
-
             ['class' => 'yii\grid\ActionColumn'],
         ],
+        'export' => false,
     ]); ?>
 
 </div>
