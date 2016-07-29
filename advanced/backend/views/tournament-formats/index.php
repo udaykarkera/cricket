@@ -30,10 +30,14 @@ $this->params['breadcrumbs'][] = $this->title;
                     return GridView::ROW_COLLAPSED;
                 },
                 'detail' => function ($model, $key, $index, $column) {
-                    $searchModel = new TournamentFormatsSearch();
-                    $searchModel->id = $model->id;
-                    $dataProvider = $searchModel->search(Yii::$app->request->queryParams); 
+                    return '<p>Coming Soon..</p>';
                 },
+                'enableRowClick' => true,
+                'expandTitle' => 'Open',
+                'collapseTitle' => 'Close',
+                'expandAllTitle' => 'Open All',
+                'collapseAllTitle' => 'Close All',
+                'expandOneOnly' => true,
             ],
             'name',
             'created_at',
