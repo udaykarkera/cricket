@@ -34,9 +34,11 @@ $this->params['breadcrumbs'][] = $this->title;
             'tournamentFormat.name',
             'organisation0.name',
             'year_count',
-            'created_at',
-            'updated_at',
-            'status',
+            'created_at:datetime',
+            'updated_at:datetime',
+            [
+                'label' => 'Status', 'value' => ucfirst($model->status)
+            ]
         ],
     ]) ?>
 

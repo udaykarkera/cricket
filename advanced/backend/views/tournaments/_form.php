@@ -19,10 +19,13 @@ use backend\models\TournamentFormats;
 
 
     <?= $form->field($model, 'tournament_format')->dropDownList(
-        ArrayHelper::map(TournamentFormats::find()->all(), 'id', 'name'), ['options' => [3 => ['Selected' => 'selected']], 'prompt' => 'Select Level' ]
+        ArrayHelper::map(TournamentFormats::find()->all(), 'id', 'name'), ['options' => [3 => ['Selected' => 'selected']], 'prompt' => 'Select Level', 'disabled' => (in_array('Update', $this->params['breadcrumbs'])) ? 'disabled' : false]
     ) ?>
-    <?= Html::a('View Existing Formats Style', ['/tournament-formats/index'], ['class'=>'btn btn-primary']) ?>
-    <?= Html::a('Create New Format', ['/tournament-formats/create'], ['class'=>'btn btn-primary']) ?>
+
+    <?php if (!in_array('Update', $this->params['breadcrumbs'])) { ?>
+        <?= Html::a('View Existing Formats Style', ['/tournament-formats/index'], ['class'=>'btn btn-primary']) ?>
+        <?= Html::a('Create New Format', ['/tournament-formats/create'], ['class'=>'btn btn-primary']) ?>
+    <?php } ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
@@ -41,7 +44,7 @@ use backend\models\TournamentFormats;
 
     <?= $form->field($model, 'year_count')->textInput(['value' => date('Y')]) ?>
 
-    <?= $form->field($model, 'home_away')->dropDownList([ '1' => 'Yes', '0' => 'No', ], ['options' => [0 => ['Selected' => 'selected']], 'prompt' => 'Select']) ?>
+    <?= $form->field($model, 'home_away')->dropDownList([ '1' => 'Yes', '0' => 'No', ], ['options' => [0 => ['Selected' => 'selected']], 'prompt' => 'Select', 'disabled' => (in_array('Update', $this->params['breadcrumbs'])) ? 'disabled' : false]) ?>
 
     <?= $form->field($model, 'status')->dropDownList([ 'active' => 'Active', 'inactive' => 'Inactive', ], ['options' => ['active' => ['Selected' => 'selected']], 'prompt' => 'Select Status']) ?>
 
