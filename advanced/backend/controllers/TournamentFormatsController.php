@@ -3,6 +3,7 @@
 namespace backend\controllers;
 
 use Yii;
+use yii\filters\AccessControl;
 use backend\models\TournamentFormats;
 use backend\models\TournamentFormatsSearch;
 use yii\web\Controller;
@@ -17,6 +18,26 @@ class TournamentFormatsController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                // 'only' => ['view', 'index'],
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'actions' => ['view'],
+                        'roles' => ['?'],
+                    ],
+                    // [
+                    //     'actions' => ['login', 'error'],
+                    //     'allow' => true,
+                    // ],
+                    [
+                        'actions' => ['index', 'view','update'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

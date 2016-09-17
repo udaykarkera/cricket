@@ -1,0 +1,75 @@
+{
+	"id": 5,
+	"count": 8,
+	"format": [
+		{
+			"round": 1,
+			"label": "League",
+			"type": "league",
+			"count": 8,
+			"group": "1x8",
+			"homeAway": 1,
+			"next-round": 4,
+			"losers": 4,
+			"dependant": 0,
+			"pos": 1,
+			"next-round-pos": [2,2]
+		},
+		{
+			"round": 2,
+			"label": "Qualifier for Semi and Finals",
+			"type": "knockout",
+			"count": 2,
+			"group": "1x1",
+			"homeAway": 0,
+			"next-round": 2,
+			"losers": 0,
+			"dependant": 1,
+			"dependantType": 0,
+			"pos": 2,
+			"next-round-pos": [1,1]
+		},
+		{
+			"round": 3,
+			"label": "Knockout",
+			"type": "knockout",
+			"count": 2,
+			"group": "1x1",
+			"homeAway": 0,
+			"next-round": 1,
+			"losers": 1,
+			"dependant": 1,
+			"dependantType": 1,
+			"pos": 2,
+			"next-round-pos": 1
+		},
+		{
+			"round": 4,
+			"label": "Semi Final",
+			"type": "knockout",
+			"count": 2,
+			"group": "1x1",
+			"homeAway": 0,
+			"next-round": 1,
+			"losers": 1,
+			"dependant": [2,3],
+			"dependantType": [1,0],
+			"pos": 3,
+			"next-round-pos": 1
+		},
+		{
+			"round": 5,
+			"label": "Final",
+			"type": "knockout",
+			"count": 2,
+			"group": "1x1",
+			"homeAway": 0,
+			"next-round": 1,
+			"losers": 1,
+			"dependant": [2,4],
+			"dependantType": [0,0],
+			"pos": 3,
+			"next-round-pos": 1
+		}
+	]
+}

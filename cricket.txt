@@ -1,0 +1,71 @@
+;Plan
+
+[UI]
+;Viewer(V) - Will only have the option to view
+;B - Both Viewer and Account Holder
+
+Home - Details, Promote, Upcoming tournaments
+
+Sign In - as Viewer or account Holder
+
+Choice - A
+	- Choose New Tournament
+	- Update Existing
+
+Make Format - A
+
+Guide - A
+
+Groups - B
+
+Fixtures - B
+
+Match Details - B
+	- ball by ball
+	- each ball total
+	- each wicket total
+	- players option and detail to choose
+	- save, update, commit
+
+Match Score - A
+	- Result
+	- Batting Score
+	- Bowling Score
+
+Standings and qualifiers - B
+
+Match Info - B
+
+[Database tables]
+Tournament Level - International, Club, private, local
+Organisations - name [ICC, BCCI, Goregaon League]
+Matches Format - league(l), Knockout(k), l + k, Friendly
+Tournament Format - 20, 50, Test, Tp
+Tournaments - name, level, M format, T format, Organisation, year-id, HomeAway
+Matches - Team 1, Team 2, result, runs1, balls1, wks1, runs2, balls2, wks2, run rate, details, type, tournament, root, active, comments, dateTime, lastupdated, createdt, toss, batting_first
+points table and qualifiers
+Scoresheet (ball by ball) - ball_no, match, runs, wicket, nw, lb, bowler, batsmen, wkeeper, Fielder, innings
+player - name, team, country 
+teams - name, country, tournament,
+Runs Table - batsman, team, match, runs, balls, innings
+Bowling Table - bowler, team, match, stats (5-2-3-20), innings
+
+
+For all tournament organisers
+This is for you
+Get your tournament online - Tournament Stats, Highest run getter, wicket taker, Match Info
+You can also Promote your tournament on our site.
+Handle all your Matches, Stats with jus entering info once and view all that you need
+All calculation is our headache...
+Just login and buy it. Its pocket friendly. Get all the features to your local tournament live online in minutes
+
+
+Bugs
+Priority
+Rules
+safe attributes
+
+Ball by ball
+fetch data
+
+https://cricket.yahoo.com/cricket-live-score-mumbai-vs-rising-pune-supergiants_193865

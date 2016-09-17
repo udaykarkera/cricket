@@ -3,6 +3,7 @@
 namespace backend\controllers;
 
 use Yii;
+use yii\filters\AccessControl;
 use backend\models\Tournaments;
 use backend\models\TournamentsSearch;
 use yii\web\Controller;
@@ -17,6 +18,25 @@ class TournamentsController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'actions' => ['view'],
+                        'roles' => ['?'],
+                    ],
+                    // [
+                    //     'actions' => ['login', 'error'],
+                    //     'allow' => true,
+                    // ],
+                    [
+                        'actions' => ['index', 'view','update'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

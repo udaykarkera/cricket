@@ -1,0 +1,7 @@
+git bare repo
+
+set login (authentication) - separate backend from frontend
+
+decide roles and features of roles
+
+create tournament format json, tournament format reader tool
