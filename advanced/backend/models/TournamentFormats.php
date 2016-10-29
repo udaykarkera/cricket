@@ -46,7 +46,7 @@ class TournamentFormats extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Tournament Format',
+            'name' => 'Tournament Format Name',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
             'status' => 'Status',
@@ -60,5 +60,19 @@ class TournamentFormats extends \yii\db\ActiveRecord
     public function getTournaments()
     {
         return $this->hasMany(Tournaments::className(), ['tournament_format' => 'id']);
+    }
+
+    /**
+     * @return Tournament Format in JSON
+     */
+    public function getTournamentFormat($id)
+    {
+        if (file_exists("tournament-json-formats/$id.json")) {
+            // return file_get_contents("tournament-json-formats/$id.json");
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 }

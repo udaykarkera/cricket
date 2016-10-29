@@ -32,7 +32,7 @@ class TournamentFormatsController extends Controller
                     //     'allow' => true,
                     // ],
                     [
-                        'actions' => ['index', 'view','update'],
+                        'actions' => ['index', 'view','create'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -133,7 +133,10 @@ class TournamentFormatsController extends Controller
      */
     protected function findModel($id)
     {
-        if (($model = TournamentFormats::findOne($id)) !== null) {
+        if (($model = TournamentFormats::findOne($id)) !== null && $formatJson = TournamentFormats::getTournamentFormat($id)) {
+            // echo '<pre>';
+            // print_r(json_decode($formatJson,1));
+            // exit;
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

@@ -31,7 +31,7 @@ class TournamentsController extends Controller
                     //     'allow' => true,
                     // ],
                     [
-                        'actions' => ['index', 'view','update'],
+                        'actions' => ['index', 'view','update','create'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -80,6 +80,7 @@ class TournamentsController extends Controller
      */
     public function actionCreate()
     {
+        exit;
         $model = new Tournaments();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {

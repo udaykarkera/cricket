@@ -4,13 +4,18 @@
 /* @var $content string */
 
 use backend\assets\AppAsset;
+use backend\assets\CreateTournamentFormat;
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use common\widgets\Alert;
 
-AppAsset::register($this);
+if ($this->context->action->id == 'create' && $this->context->action->controller->id == 'tournament-formats') {
+    CreateTournamentFormat::register($this);
+} else {
+    AppAsset::register($this);
+}
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>

@@ -1,4 +1,5 @@
 <?php
+use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 
@@ -11,7 +12,11 @@ $this->title = 'My Yii Application';
 
         <p class="lead">You have successfully created your Yii-powered application.</p>
 
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
+        <p>
+            <?= Html::a('View Tournament', ['tournaments/view', 'id' => 1], ['class' => 'btn btn-success']) ?>
+        </p>
+        <p><?= Html::a('Create New Tournament', ['tournaments/create'], ['class' => 'btn btn-success']) ?></p>
+        <p><?= Html::a('Update My Tournament', ['tournaments/update', 'id' => 1], ['class' => 'btn btn-success']) ?></p>
     </div>
 
     <div class="body-content">
